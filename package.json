@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "node_modules/.bin/webpack-dev-server --host 0.0.0.0",
     "build": "rimraf build && cross-env NODE_ENV=production node_modules/.bin/webpack",
-    "start": "npm run build && http-server build",
+    "start": "npm run build && http-server dist",
     "test": "cross-env karma start ./tests/karma.conf.js"
   },
   "dependencies": {

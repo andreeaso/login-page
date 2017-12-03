@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const APP_FOLDER = 'app';
 const INIT_FILE = 'initialize.js';
-const BUILD_DIR = 'build';
+const BUILD_DIR = 'dist';
 const isProduction = process.env.NODE_ENV === 'production'
 
 const plugins = () => {

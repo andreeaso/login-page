@@ -2,6 +2,8 @@ import expect from 'expect'
 import {loginActionsHandler as reducer} from 'login/loginActions'
 import * as types from '../../app/login/loginTypes'
 
+global.window.localStorage = {setItem: () => {}, getItem: () => {return {}}};
+
 describe('Login reducer', () => {
   const initialState = {
     loginErrorMessage: '',
@@ -13,6 +15,7 @@ describe('Login reducer', () => {
   const testUser = {name: 'test'};
 
   it('should return the initial state', () => {
+    sinon.spy(global.window.localStorage, 'getItem');
     expect(
         reducer(undefined, {})
     ).toEqual(initialState)
